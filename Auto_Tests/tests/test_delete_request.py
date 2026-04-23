@@ -1,6 +1,6 @@
 from requests import Response
 
-from crud_operations.api import GMAPI
+from crud_operations.api import GoogleMapsApi
 
 
 # Класс с тестами
@@ -8,7 +8,7 @@ class TestCreatePlace:
     # Тест создания нового места
     def test_create_new_place(self):
         # Объект класса Google Maps API
-        gmapi = GMAPI()
+        gmapi = GoogleMapsApi()
 
         # Вызов метода создания нового места
         print("\nМетод POST")

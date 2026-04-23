@@ -1,8 +1,8 @@
-from crud_operations.crud import CRUD
+from crud_operations.request_methods import RequestMethods
 
 
 # Класс для работы с API сервисом
-class GMAPI:
+class GoogleMapsApi:
     def __init__(self):  # Базовые параметры для работы с запросами
         self.api_key = "?key=qaclick123"
         self.base_url = "https://rahulshettyacademy.com"
@@ -31,13 +31,13 @@ class GMAPI:
     def create_new_place(self):
         url = self.base_url + self.post_resources + self.api_key
         print(url)
-        return CRUD.post(url, self.body)
+        return RequestMethods.post(url, self.body)
 
     # Вывод ответа Get-запроса
     def get_place_by_place_id(self, place_id):
         url = self.base_url + self.get_resources + self.api_key + '&place_id=' + place_id
         print(url)
-        return CRUD.get(url)
+        return RequestMethods.get(url)
 
     # Вывод ответа Put-запроса
     def update_place_by_place_id(self, place_id):
@@ -48,7 +48,7 @@ class GMAPI:
             "key": "qaclick123"
         }
         print(url)
-        return CRUD.put(url, body)
+        return RequestMethods.put(url, body)
 
 
     # Вывод ответа Delete-запроса
@@ -58,4 +58,4 @@ class GMAPI:
             "place_id": place_id,
         }
         print(url)
-        return CRUD.delete(url, body)
+        return RequestMethods.delete(url, body)
